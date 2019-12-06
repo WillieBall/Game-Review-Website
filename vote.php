@@ -13,8 +13,6 @@ switch($vote_type) {
 	);
 	$statement = $database->prepare($sql);
 	$statement->execute($params);
-	$games = $statement->fetchAll(PDO::FETCH_ASSOC);
-	
 	break;
 	
 	//VOTE DOWN
@@ -25,7 +23,6 @@ switch($vote_type) {
 	);
 	$statement = $database->prepare($sql);
 	$statement->execute($params);
-	$games = $statement->fetchAll(PDO::FETCH_ASSOC);
 	break;
 }
 ?>

@@ -61,11 +61,7 @@ $getuser = new getuser($userID, $database);
 		$categories = getGenre($game['gameid'], $database);
 		foreach($categories as $cat) :
 		?>
-		<li>
-		<?php
-		echo $cat['genre'];
-		?>
-		</li>
+		<li><?php echo $cat['genre'];?></li>
 		<?php
 		endforeach;
 		?>

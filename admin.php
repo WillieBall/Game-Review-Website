@@ -17,6 +17,9 @@ $games = getGames($database);
       <div class="jumbotron">
         <h1>Admin Panel</h1>
 		
+		<?php if(!empty($_GET['msg'])) { ?>
+		<center><h3><?php echo htmlentities($_GET['msg']); ?></h3></center>
+		<?php } ?>
 		
 		<form class="form-horizontal" action="admin.php?editgame=true" method="GET">
 		<input type="hidden" name="editgame" value="true" />
@@ -28,6 +31,29 @@ $games = getGames($database);
 		</select>
 		<button type="submit" class="btn btn-default">Edit Game</button>
 		</form>
+		<br /><br />
+		<h3>Add Game</h3>
+		<form class="form-horizontal" action="./admin_action.php?action=add" method="POST">
+		<input type="hidden" name="addgame" value="true" />
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="name">Game Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name"">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="price">Game Price:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="price" name="price">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Add Game</button>
+    </div>
+  </div>
+		</form>
 		
 		
 <?php if(!empty($_GET['editgame']) && is_numeric($_GET['gameid'])) : ?>	
@@ -38,29 +64,25 @@ $get_game = getGame($gameid, $database);
 foreach($get_game as $game):
 ?>
 <br />
-<form class="form-horizontal" action="/admin_action.php" method="post">
+<form class="form-horizontal" action="./admin_action.php?action=edit" method="post">
+<input type="hidden" name="gameid" value="<?php echo $_GET['gameid']; ?>">
+
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Game Name:</label>
+    <label class="control-label col-sm-2" for="name">Game Name:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="gamename" value="<?php echo $game['name']; ?>">
+      <input type="text" class="form-control" id="name" name="name" value="<?php echo $game['name']; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Game Price:</label>
+    <label class="control-label col-sm-2" for="price">Game Price:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="gamename" value="<?php echo $game['price']; ?>">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Vote Count:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="gamename" value="<?php echo $game['votecount']; ?>">
+      <input type="text" class="form-control" id="price" name="price" value="<?php echo $game['price']; ?>">
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Edit Game</button>
+      <button type="submit" class="btn btn-default">Save Game</button>
     </div>
   </div>
 </form>

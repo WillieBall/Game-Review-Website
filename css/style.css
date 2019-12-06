@@ -53,10 +53,10 @@ ul.game-categories {
 }
 ul.game-categories li {
     display: inline-block;
-    padding: 0px 5px;
+    padding: 0px;
 }
 ul.game-categories li:after {
-    content: ", ";
+    content: ",";
 }
 ul.game-categories li:nth-last-child(1):after {
     content: "";
