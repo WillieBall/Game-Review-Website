@@ -13,7 +13,7 @@ $getuser = new getuser($userID, $database);
 //$games = getGames($gameid, $database);
 //$game = $games[0];
 //$game_genre = getGenre($gameid, $database);
-// Get categories of book from the database
+
 
 ?>
 

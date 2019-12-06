@@ -24,10 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// If $users is not empty
 	if(!empty($users)) {
 
-        // use password verify to ensure provided password matches the saved hash
+        // If passwords match
         if ($password == $users[0]['password']) {
 				
-        // If the password and the hash check out
             // Set $user equal to the first result of $users
 			$user = $users[0];
             // Set a session variable with a key of userID equal to the userID returned
