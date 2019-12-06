@@ -1,0 +1,66 @@
+/* BOOTSTRAP MODIFCATIONS */
+.jumbotron p {
+    margin-bottom: 0px;
+}
+
+/* ADMIN AREA */
+
+.jumbotron select.form-control {
+    max-width: 250px;
+}
+
+/* LISTINGS AREA */
+.game-list-wrapper {
+    margin-top: 30px;
+}
+.games-listing {
+    border-bottom: 1px dashed #999;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+.game-vote {
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+.game-vote i {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+.game-vote i:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.vote-down {
+    border-top: 1px solid #999;
+    padding-top: 10px;
+}
+.vote-count {
+    font-weight: 700;
+	font-size: 21px;
+}
+.jumbotron input.form-control {
+    float: left;
+    width: 200px;
+    margin-right: 10px;
+}
+
+/* CATEGORIES */
+ul.game-categories {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+ul.game-categories li {
+    display: inline-block;
+    padding: 0px 5px;
+}
+ul.game-categories li:after {
+    content: ", ";
+}
+ul.game-categories li:nth-last-child(1):after {
+    content: "";
+}
+ul.game-categories li:nth-child(1) {
+    padding-left: 0px;
+}
