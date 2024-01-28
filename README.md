@@ -1,0 +1,1 @@
+This Project is a game review website. Users can submit requests to add new games to the website, as well as vote with a 1-5 rating for each game along with a review. Admins must sign into the admin panel to approve requests to add new games. Admins may also edit/remove games and reviews. The site includes filters to organize the content based on what the user selects.
